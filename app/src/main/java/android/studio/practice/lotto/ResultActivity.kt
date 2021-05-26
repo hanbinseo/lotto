@@ -11,11 +11,14 @@ class ResultActivity : AppCompatActivity() {
 
         val result = intent.getIntegerArrayListExtra("result") ?: return
 
-        val result_sorted = result?.sortedBy { it }
-
+        result?.let{
+            updateLottoBallImages(result?.sortedBy { it })
+        }
+    }
+    private fun updateLottoBallImages(result_sorted : List<Int>){
+        if(result_sorted.size < 6) return
         val lottoBallImage1stId = R.drawable.ball_01
-//        val lottoBallImage2ndId = R.drawable.ball_02
-//        val lottoBallImage3rdId = R.drawable.ball_03
+
         val imageView1 = findViewById<ImageView>(R.id.imageView2)
         val imageView2 = findViewById<ImageView>(R.id.imageView3)
         val imageView3 = findViewById<ImageView>(R.id.imageView4)
