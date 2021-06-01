@@ -3,7 +3,9 @@ package android.studio.practice.lotto
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.DatePicker
 import androidx.cardview.widget.CardView
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -28,7 +30,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, NameActivity::class.java))
         }
     }
-
     fun getRandomLottoNumber():Int{
         return Random().nextInt(45)+1
     }
